@@ -1758,7 +1758,9 @@ class Translatable_Transformation extends FormTransformation {
 	protected function transformCheckboxField(CheckboxField $nonEditableField, CheckboxField $originalField) {
 		$label = $originalField->Title();
 		$fieldName = $originalField->getName();
-		$value = ($this->original->$fieldName) ? _t('Translatable_Transform.CheckboxValueYes', 'Yes') : _t('Translatable_Transform.CheckboxValueNo', 'No');
+		$value = ($this->original->$fieldName) 
+			? _t('Translatable_Transform.CheckboxValueYes', 'Yes') 
+			: _t('Translatable_Transform.CheckboxValueNo', 'No');
 		$originalLabel = _t(
 			'Translatable_Transform.OriginalCheckboxLabel', 
 			'Original: {value}',
